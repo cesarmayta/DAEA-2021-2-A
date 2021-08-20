@@ -8,7 +8,7 @@ namespace HolaMundo
         {
             Console.WriteLine("Hola , como te llamas : ");
             String nombre = Console.ReadLine();
-            Console.WriteLine("mucho gusto en conocerte " + nombre);
+            Console.WriteLine("mucho gusto  " + nombre);
         }
     }
 }
