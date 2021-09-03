@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BFCD2EB2-E59C-4980-B2AA-DEC65959BE03}</ProjectGuid>
+    <ProjectGuid>{81DE918F-0A70-4E8E-B14D-D091D27F5368}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Lab02_01</RootNamespace>
-    <AssemblyName>Lab02-01</AssemblyName>
+    <RootNamespace>Lab03</RootNamespace>
+    <AssemblyName>Lab03</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,43 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="frmConDB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="frmConDB.Designer.cs">
+      <DependentUpon>frmConDB.cs</DependentUpon>
     </Compile>
-    <Compile Include="manClientes.cs">
+    <Compile Include="Persona.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="manClientes.Designer.cs">
-      <DependentUpon>manClientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="manUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="manUsuario.Designer.cs">
-      <DependentUpon>manUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PrincipalMDI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PrincipalMDI.Designer.cs">
-      <DependentUpon>PrincipalMDI.cs</DependentUpon>
+    <Compile Include="Persona.Designer.cs">
+      <DependentUpon>Persona.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="frmConDB.resx">
+      <DependentUpon>frmConDB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="manClientes.resx">
-      <DependentUpon>manClientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="manUsuario.resx">
-      <DependentUpon>manUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PrincipalMDI.resx">
-      <DependentUpon>PrincipalMDI.cs</DependentUpon>
+    <EmbeddedResource Include="Persona.resx">
+      <DependentUpon>Persona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
