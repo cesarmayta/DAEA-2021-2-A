@@ -11,25 +11,25 @@ using System.Data.SqlClient;
 
 namespace Lab03
 {
-    public partial class Persona : Form
+    public partial class Curso : Form
     {
         SqlConnection conn;
-        public Persona(SqlConnection conn)
+        public Curso(SqlConnection conn)
         {
             this.conn = conn;
             InitializeComponent();
         }
 
-        private void Persona_Load(object sender, EventArgs e)
+        private void Curso_Load(object sender, EventArgs e)
         {
 
         }
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            if(conn.State == ConnectionState.Open)
+            if (conn.State == ConnectionState.Open)
             {
-                String sql = "select * from Person";
+                String sql = "SELECT * FROM Course";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -37,6 +37,7 @@ namespace Lab03
                 dt.Load(reader);
                 dgvListado.DataSource = dt;
                 dgvListado.Refresh();
+
             }
             else
             {
@@ -46,19 +47,19 @@ namespace Lab03
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (conn.State == ConnectionState.Open)
+            if(conn.State == ConnectionState.Open)
             {
-                String FirstName = txtNombre.Text;
+                String Title = txtNombre.Text;
 
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "BuscarPersonaNombre";
+                cmd.CommandText = "BuscarCursoTitulo";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Connection = conn;
 
                 SqlParameter param = new SqlParameter();
-                param.ParameterName = "@FirstName";
+                param.ParameterName = "@Title";
                 param.SqlDbType = SqlDbType.NVarChar;
-                param.Value = FirstName;
+                param.Value = Title;
 
                 cmd.Parameters.Add(param);
 
@@ -67,13 +68,12 @@ namespace Lab03
                 dt.Load(reader);
                 dgvListado.DataSource = dt;
                 dgvListado.Refresh();
-
-
             }
             else
             {
                 MessageBox.Show("La conexión esta cerrada");
             }
+            
         }
     }
 }
